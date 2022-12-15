@@ -28,7 +28,7 @@
 					},
 					"sink": {
 						"type": "SqlPoolSink",
-						"preCopyScript": "drop table if exists dbo.tabularData;",
+						"preCopyScript": "if object_id('tabulardata') is not null\nbegin\n\tdrop table tabulardata;\nend",
 						"writeBehavior": "Insert",
 						"sqlWriterUseTableLock": false,
 						"tableOption": "autoCreate"
