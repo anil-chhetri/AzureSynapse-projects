@@ -1,0 +1,16 @@
+{
+	"name": "DS_SQLPool_Hierarchical_data",
+	"properties": {
+		"annotations": [],
+		"type": "SqlPoolTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "HierarchicalData"
+		},
+		"sqlPool": {
+			"referenceName": "asa_dedicateSQL_pool",
+			"type": "SqlPoolReference"
+		}
+	}
+}

@@ -1,0 +1,17 @@
+{
+	"name": "DS_http_web",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_webData",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "HttpServerLocation"
+			}
+		},
+		"schema": {}
+	}
+}
