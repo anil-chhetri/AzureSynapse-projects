@@ -1,0 +1,155 @@
+{
+	"name": "PL_Ingest_tabularJSONData",
+	"properties": {
+		"description": "get the tabular json data from web and stores the data in sql server table.",
+		"activities": [
+			{
+				"name": "getTheTabularData",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "JsonSource",
+						"storeSettings": {
+							"type": "HttpReadSettings",
+							"requestMethod": "GET"
+						},
+						"formatSettings": {
+							"type": "JsonReadSettings"
+						}
+					},
+					"sink": {
+						"type": "SqlPoolSink",
+						"preCopyScript": "drop table if exists dbo.tabularData;",
+						"writeBehavior": "Insert",
+						"sqlWriterUseTableLock": false,
+						"tableOption": "autoCreate"
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"path": "$['login']"
+								},
+								"sink": {
+									"name": "login"
+								}
+							},
+							{
+								"source": {
+									"path": "$['id']"
+								},
+								"sink": {
+									"name": "id"
+								}
+							},
+							{
+								"source": {
+									"path": "$['node_id']"
+								},
+								"sink": {
+									"name": "node_id"
+								}
+							},
+							{
+								"source": {
+									"path": "$['url']"
+								},
+								"sink": {
+									"name": "url"
+								}
+							},
+							{
+								"source": {
+									"path": "$['repos_url']"
+								},
+								"sink": {
+									"name": "repos_url"
+								}
+							},
+							{
+								"source": {
+									"path": "$['events_url']"
+								},
+								"sink": {
+									"name": "events_url"
+								}
+							},
+							{
+								"source": {
+									"path": "$['hooks_url']"
+								},
+								"sink": {
+									"name": "hooks_url"
+								}
+							},
+							{
+								"source": {
+									"path": "$['issues_url']"
+								},
+								"sink": {
+									"name": "issues_url"
+								}
+							},
+							{
+								"source": {
+									"path": "$['members_url']"
+								},
+								"sink": {
+									"name": "members_url"
+								}
+							},
+							{
+								"source": {
+									"path": "$['public_members_url']"
+								},
+								"sink": {
+									"name": "public_members_url"
+								}
+							},
+							{
+								"source": {
+									"path": "$['avatar_url']"
+								},
+								"sink": {
+									"name": "avatar_url"
+								}
+							},
+							{
+								"source": {
+									"path": "$['description']"
+								},
+								"sink": {
+									"name": "description"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "DS_jsonData_Web",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "SqlPoolTable1",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": []
+	}
+}

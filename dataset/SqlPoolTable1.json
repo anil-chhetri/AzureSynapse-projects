@@ -1,0 +1,16 @@
+{
+	"name": "SqlPoolTable1",
+	"properties": {
+		"annotations": [],
+		"type": "SqlPoolTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "tabularData"
+		},
+		"sqlPool": {
+			"referenceName": "asa_dedicateSQL_pool",
+			"type": "SqlPoolReference"
+		}
+	}
+}

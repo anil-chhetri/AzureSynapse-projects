@@ -1,0 +1,17 @@
+{
+	"name": "DS_jsonData_Web",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_JSONData_Web",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "HttpServerLocation"
+			}
+		},
+		"schema": {}
+	}
+}
