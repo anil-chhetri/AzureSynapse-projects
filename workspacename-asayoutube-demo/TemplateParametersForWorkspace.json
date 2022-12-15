@@ -1,0 +1,21 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"workspaceName": {
+			"value": "workspacename-asayoutube-demo"
+		},
+		"workspacename-asayoutube-demo-WorkspaceDefaultSqlServer_connectionString": {
+			"value": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=tcp:workspacename-asayoutube-demo.sql.azuresynapse.net,1433;Initial Catalog=@{linkedService().DBName}"
+		},
+		"workspacename-asayoutube-demo-WorkspaceDefaultStorage_properties_typeProperties_url": {
+			"value": "https://adlsyoutubedemo.dfs.core.windows.net"
+		},
+		"LS_JSONData_Web_properties_typeProperties_url": {
+			"value": "https://api.github.com/users/hadley/orgs"
+		},
+		"LS_webData_properties_typeProperties_url": {
+			"value": "https://gorest.co.in/public/v1/users"
+		}
+	}
+}
