@@ -4,7 +4,7 @@
 		"annotations": [],
 		"type": "HttpServer",
 		"typeProperties": {
-			"url": "https://yelp-dataset.s3.amazonaws.com/YDC22/yelp_dataset.tgz?AWSAccessKeyId=AKIAJ3CYHOIAD6T2PGKA&Signature=yMFbM%2Bsi26dKfsxUnwe5EHYtu3E%3D&Expires=1671216030",
+			"url": "https://yelp-dataset.s3.amazonaws.com/YDC22",
 			"enableServerCertificateValidation": true,
 			"authenticationType": "Anonymous"
 		},
