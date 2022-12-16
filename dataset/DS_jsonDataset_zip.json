@@ -1,0 +1,22 @@
+{
+	"name": "DS_jsonDataset_zip",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_root_adls",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileSystem": "fs-rawdata-gen2"
+			},
+			"compression": {
+				"type": "TarGZip",
+				"level": "Fastest"
+			}
+		},
+		"schema": {}
+	}
+}

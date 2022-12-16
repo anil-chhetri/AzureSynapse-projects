@@ -1,0 +1,21 @@
+{
+	"name": "DS_yelpDataset",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_yelpDatasets",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "HttpServerLocation"
+			},
+			"compression": {
+				"type": "TarGZip",
+				"level": "Fastest"
+			}
+		},
+		"schema": {}
+	}
+}
